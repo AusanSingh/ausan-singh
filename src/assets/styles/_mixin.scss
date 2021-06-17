@@ -1,0 +1,7 @@
+
+
+@mixin vendor-prefix($name, $value) {
+    @each $vendor in ('-webkit-', '-moz-', '-ms-', '') {
+      #{$vendor}#{$name}: #{$value};
+    }
+  }

@@ -1,0 +1,343 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import '~node_modules/bootstrap/scss/bootstrap';
+@import '~font-awesome/css/font-awesome.css';
+
+@import "variable";
+@import "mixin";
+@import "common";
+
+body{
+    font: normal 14px $baseFont; 
+    color: $darkText;
+    background: $bgColor;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+    height:auto;
+    width: auto;
+}
+        /*AboutMe*/
+        .profile-box{
+            @media #{$mobile-480}{
+                        margin: 0;
+                    }
+            .profile-pic {
+                border: 14px solid $white;
+                border-radius: 5px;
+            }
+        }
+        .basic-info{
+            margin: 0 0 30px;
+            border-bottom: 1px dotted #ddd;
+            padding: 15px 30px 0 0;
+            .name {
+                margin-bottom: 0;
+                span {
+                    font-weight: 300;
+                }
+            }
+            .position{
+                margin: 0;
+                color: $blueText;
+            }
+            .about-text{
+                    font-size: 16px;
+                    color: $lightText;
+                    margin: 20px 0 15px;
+                    line-height: 28px;
+                    text-align: justify;
+            }
+        }
+        .about-list{
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    display: block;
+                    margin: 15px 0;
+                    &:after {
+                        clear: both;
+                        content: '';
+                        display: block;
+                    }
+                    strong{
+                        float: left;
+                        width: 100px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: $darkText;
+                    }
+                    span{
+                        float: left;
+                        display: block;
+                        color: $lightText;
+                        a{
+                            color:$lightText;
+                            padding: 6px 12px;
+                            font-size: 16px;
+                            &:first-child{
+                                padding-left: 0;
+                            }
+                            &:hover{
+                                color: $blueText;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+         @media #{$medium-device}{
+               .basic-info, .about-list{
+                   margin: 0;
+                   padding: 15px;
+               }
+               .profile-pic{
+                   width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    margin: 15px auto;
+                    overflow: hidden;
+                    text-align: center;
+                    background: #2d2c3b;
+                    @media #{$mobile-480}{
+                        width: 100%;
+                        height: auto;
+                        overflow: visible;
+                        border-radius: 0;
+                        margin: 0;
+                    }
+               }
+            }
+
+        .resume-download {
+            @media #{$medium-device}{
+               margin: 0; 
+            }
+            .btn-primary{
+                border-radius:0;
+                i{
+                    transition: all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
+                }
+                i.fa-download{
+                    opacity: 0;
+                    transform: translate(16px, -20px);
+                }
+                &:hover{
+                    i.fa-file-text-o{
+                        opacity: 0;
+                        transform: scale(0);
+                    }
+                    i.fa-download{
+                        opacity: 1;
+                        transform: translate(16px, 0);
+                    }
+                }
+            }
+        }
+
+        /*Section*/
+        .section-p{
+             padding: 75px 0;
+             background: $white;
+             &:nth-child(odd){
+                 background-color: $gray !important;
+             }
+        }
+        .section-heading{
+            margin: 0 0 30px;
+            text-transform: uppercase;
+            position: relative;
+            &:after{
+                content:'';
+                width:80px;
+                height:3px;
+                background:rgba(11,163,182,.3);
+                position:absolute;
+                bottom:-10px;
+                left:50%;
+                transform:translateX(-50%)
+            }
+        }
+        /*Section end*/
+
+        /*Skill Section*/
+        .skill-section{
+            .progress-head{
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .progress{
+                height: 14px;
+                border-radius: 0;
+                background: $gray;
+                box-shadow: none;
+                .progress-bar{
+                    height: 14px;
+                    line-height: 14px;
+                    font-size: 11px;
+                    background: $primaryColor;
+                    box-shadow: none;
+                }
+            }
+        }
+        /*Skill Section End*/
+
+        /*Education Section*/
+        .education-section{
+            background: $section-bg;
+        }
+
+        /*Education Section*/
+        .experience-section{
+            background: #fbfbfb;
+            a{
+                color: $dark;
+                text-decoration: underline;
+            }
+        }
+
+        /*info-content*/
+        .info-content{
+            position: relative;
+            padding: 15px 0 15px 30px;
+            border-left: 2px solid #ddd;
+            margin-left: 180px;
+            h3{
+                margin: 0;
+            }
+            .tenure{
+                position: absolute;
+                color: $primaryColor;
+                left: -150px;
+                text-align: right;
+                width: 130px;
+                top: 22px;
+                &:after{
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 6px;
+                    background: $primaryColor;
+                    position: absolute;
+                    right: -24px;
+                    top: 0;
+                }
+            }
+            ul{
+                li{
+                    margin: 5px 0;
+                    color: $lightText;
+                }
+            }
+        }
+        @media #{$tablet-breakpoint}{
+             .info-content{
+                    margin:0;
+                    h3{
+                        margin:20px 0 10px;
+                    }
+                    .tenure {
+                        position: relative;
+                        color: #0ba3b6;        
+                        width: 100%;
+                        left:0;
+                        top: 0;
+                        &:after{
+                                left:-36px
+                            }
+                    }
+                }   
+        }
+
+
+/* PortFolio*/
+.portfolio-section{
+    
+}
+.portfolio-section .col-md-4{
+    padding: 0;
+}
+.porfolio-cart{
+    background: #fff;
+    position: relative;
+    .p-inner-hover{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        a {
+            color: #fff;
+            padding: 10px;
+            font-size: 22px;
+            background: rgba(255, 255, 255, 0.28);
+            border: 1px solid #fff;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 40px;
+            transition: all .8s;
+            margin: 0 3px;
+            &:hover{
+                background: rgba(255, 255, 255, 0.1);
+            }
+            &:first-child{
+                transform: translate(-30px, 0) scale(.7);
+            }
+             &:last-child{
+                transform: translate(30px, 0) scale(.7);
+            }
+        }
+    }
+    &:hover{
+        .p-inner-hover{
+            a{
+                    transform: translate(0, 0) scale(1);
+            }
+        }
+         .porfolio-cart-hover {
+             visibility: visible;
+             opacity: 1;
+         }
+    }
+                 
+    .porfolio-cart-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0,0,0,.6);
+        visibility: hidden;
+        opacity: 0;
+        transition: all .4s;
+    }
+}
+
+/*Footer Section*/
+.footer-section {
+    text-align:center;
+    background:#313e48;
+    padding: 80px 0;
+    h5{
+         color:#fff;
+        margin-bottom:20px;
+        a{
+            @extend h5;
+        }
+    }
+    span{
+        a{
+            color:#bfd7e8;
+            font-size:18px;
+            margin:5px;
+            padding:6px;
+            &:hover{
+                color:#fff;
+            }
+        }
+    }
+}

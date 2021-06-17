@@ -1,0 +1,23 @@
+//Colors
+$primaryColor:#038fbb;
+$primaryLight:#2fd7ec;
+$lightText:#7b7b7b;
+$darkText:#444;
+$blueText:#038fbb;
+$bgColor:#efefef;
+$baseFont:'lato', sans-serif;
+$section-bg:#f8f8f8;
+$white:#fff;
+$gray:#eaedf2;
+$dark:#090a0c !default;
+
+//Media Query
+$tablet-breakpoint:"(max-width:768px)";
+$medium-device:"(max-width:991px)";
+$mobile-480:"(max-width:480px)";
+
+// Breakpoints
+$media-xsm:					567px !default;
+$media-sm:					767px !default;
+$media-md:					991px !default;
+$media-lg:					1200px !default;
